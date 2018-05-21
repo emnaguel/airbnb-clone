@@ -17,9 +17,10 @@ class BoatsController < ApplicationController
 
   def create
     @boat = Boat.new(boat_params)
+    @boat.user = current_user
     @boat.save!
     if @boat.save
-      redirect_to boat(@boat)
+      redirect_to boat_path(@boat)
     else
       render :new
     end
@@ -28,7 +29,7 @@ class BoatsController < ApplicationController
   def update
     @boat.update(boat_params)
     if @boat.update(boat_params)
-      redirect_to boat(@boat)
+      redirect_to boat_path(@boat)
     else
       render :edit
     end
@@ -36,7 +37,7 @@ class BoatsController < ApplicationController
 
   def destroy
     @boat.destroy
-    redirect_to boats(@boat)
+    redirect_to boats_path(@boat)
   end
 
   private
@@ -46,6 +47,6 @@ class BoatsController < ApplicationController
     end
 
     def boat_params
-      params.require(:boat).permit(:name, :address, :description, :stars, :user_id)
+      params.require(:boat).permit(:name, :address, :description, :stars, :user_id, :category, :model, :capacity, :price)
     end
 end
