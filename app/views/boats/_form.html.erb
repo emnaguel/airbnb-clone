@@ -1,6 +1,6 @@
 <%= simple_form_for(@boat) do |f| %>
     <%= f.input :name %>
-    <%= f.input :category, collection: Boat.categories %>
+    <%= f.input :category, collection: Boat::CATEGORIES %>
     <%= f.input :model %>
     <%= f.input :address %>
     <%= f.input :description %>
