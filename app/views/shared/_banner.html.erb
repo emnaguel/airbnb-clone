@@ -10,12 +10,23 @@
     <h1>WATBOAT</h1>
     <p>Rent a boat</p>
   </div>
-    <div class="banner-search">
-      <%= select_tag "timezone", options_from_collection_for_select(
-      ActiveSupport::TimeZone.all.
-        map { |tz| tz.tzinfo }.
-        sort_by { |tzinfo| tzinfo.name },
-      :name, :name),
-      class: 'select2' %>
+
+
+  <div class="container" class="form-inline">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+        <form action="#" class="form-inline">
+          <div class="banner-search">
+              <%= select_tag "timezone",options_from_collection_for_select(ActiveSupport::TimeZone.all.map { |tz| tz.tzinfo }.
+                sort_by { |tzinfo| tzinfo.name }, :name, :name), class: 'select2' %>
+          </div>
+            <input type="email" class="form-control">
+          </div>
+            <input type="password" class="form-control">
+          </div>
+          <input type="submit" value="Sign In" class="btn btn-primary">
+        </form>
+      </div>
     </div>
+  </div>
 </div>

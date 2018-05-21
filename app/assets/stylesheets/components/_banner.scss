@@ -1,11 +1,24 @@
 
 
 .banner {
-  background-image: asset-url('banner.jpg');
+  background-image: asset-url('banner.jpg'); filter: grayscale(70%);
   background-size: cover !important;
   height: 100vh;
-  color:#eee;
+  color:#black;
   text-align: center;
   padding-top: 40vh;
   }
 
+.banner h1 {
+  font-family : Arial, sans-serif, monospace;
+  font-weight: bold;
+  letter-spacing: 10px;
+  font-size: 48px;
+}
+
+.banner p {
+  font-family : courier, sans-serif, monospace;
+  font-weight: bold;
+  letter-spacing: 10px;
+  font-size: 24px;
+}
