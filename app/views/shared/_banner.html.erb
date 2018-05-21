@@ -17,11 +17,5 @@
         sort_by { |tzinfo| tzinfo.name },
       :name, :name),
       class: 'select2' %>
-            <%= select_tag "timezone", options_from_collection_for_select(
-      ActiveSupport::TimeZone.all.
-        map { |tz| tz.tzinfo }.
-        sort_by { |tzinfo| tzinfo.name },
-      :name, :name),
-      class: 'select2' %>
     </div>
 </div>
