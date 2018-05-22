@@ -24,7 +24,7 @@ class BoatsController < ApplicationController
     authorize @boat
     @boat.save!
     if @boat.save
-      redirect_to boat_path(@boat)
+      redirect_to dashboard_owner_path
     else
       render :new
     end
@@ -43,7 +43,7 @@ class BoatsController < ApplicationController
   def destroy
     authorize @boat
     @boat.destroy
-    redirect_to boats_path(@boat)
+    redirect_to dashboard_owner_path
   end
 
   private

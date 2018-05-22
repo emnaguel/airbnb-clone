@@ -15,23 +15,7 @@
           <%= link_to "", boat_path(boat), class:'card-link'%>
         <% end %>
         </div>
-        <div>
-          <% if policy(boat).edit? %>
-            <%= link_to edit_boat_path(boat) do %>
-              <i class="far fa-edit"></i>
-            <% end %>
-          <% end %>
-          <% if policy(boat).destroy? %>
-            <%= link_to boat_path(boat), method: :delete, data: { confirm: 'Are you sure?' } do %>
-              <i class="far fa-trash-alt"></i>
-            <% end %>
-          <% end %>
-        </div>
       </div>
     <% end %>
   </div>
-  <br><br><br><br>
-  <% if policy(Boat).create? %>
-    <%= link_to 'New Boat', new_boat_path %>
-  <% end %>
 </div>
