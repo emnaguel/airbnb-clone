@@ -10,26 +10,12 @@
     <h1>WATBOAT</h1>
     <p>Rent a boat</p>
   </div>
-
-  <div class="container" class="form-inline">
-    <!-- <div class="row"> -->
-
-      <div class="col-xs-12 ">
-
-        <form action="#" class="form-inline">
-                  <div class="banner-search">
-                    <div class="col-xs-12 ">
-                      <%= select_tag "timezone",options_from_collection_for_select(ActiveSupport::TimeZone.all.map { |tz| tz.tzinfo }.
-                        sort_by { |tzinfo| tzinfo.name }, :name, :name), class: 'select2' %>
-                  </div>
-                    <input type="email" class=" form-control" class="form-inline">
-                    </div>
-                      <input type="password" class="form-control" class="form-inline">
-                    </div>
-                    <input type="submit" value="Sign In" class="btn btn-primary">
-                    </div>
-        </form>
-      </div>
-    </div>
+  <div class="container">
+    <form action="#" class="form-inline" id="banner-form">
+      <%= select_tag "timezone",options_from_collection_for_select(ActiveSupport::TimeZone.all.map { |tz| tz.tzinfo }.sort_by { |tzinfo| tzinfo.name }, :name, :name), class: 'select2' %>
+      <input type="text" class="form-control" placeholder="ccdscdcds">
+      <input type="text" class="form-control">
+      <input type="submit" value="Sign In" class="btn btn-primary">
+    </form>
   </div>
 </div>
