@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
   def home
+    @boats = policy_scope(Boat).order(created_at: :desc)
   end
 
   def dashboard_owner
