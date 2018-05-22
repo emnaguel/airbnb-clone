@@ -1,13 +1,12 @@
 
 
-.banner {
+.container-banner {
   background-image: asset-url('banner.jpg'); filter: grayscale(70%);
   background-size: cover !important;
   height: 100vh;
   color:#black;
   text-align: center;
-  padding-top: 40vh;
-  margin-top : 70px;
+  padding-top: 30vh;
   }
 
 .banner h1 {
@@ -24,11 +23,24 @@
   font-size: 24px;
 }
 
-#banner-form {
-  input {
+// .form-control {
+//   height: 28px;
+//   border-radius: 5px;
+//   background: white
 
-  }
-  .btn {
-
-  }
+.btn btn-primary {
+  height: 40px;
+  border-radius: 5px
 }
+
+.card {
+  margin: 30px;
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+}
+
+
