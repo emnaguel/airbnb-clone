@@ -1,19 +1,29 @@
 <div class="container">
-  <p>Owner: <%= @boat.owner.email %></p>
-  <p>Name: <%= @boat.name %></p>
-  <p>Category: <%= @boat.category %></p>
-  <p>Model: <%= @boat.model %></p>
-  <p>Address: <%= @boat.address %></p>
-  <p>Description: <%= @boat.description %></p>
-  <p>Capacity: <%= @boat.capacity %></p>
-  <p>Price: <%= @boat.price %></p>
-  <p>Rating: <%= @boat.stars %></p>
-  <% if policy(Booking).new? %>
-    <%= link_to 'Book this boat', new_boat_booking_path(@boat) %>
-  <% end %>
-  <% if policy(@boat).edit? %>
-    <%= link_to 'Edit', edit_boat_path(@boat) %>
-  <% end %>
-  <%= link_to 'Back', boats_path %>
+  <div class="row">
+    <div class= "col-sm-offset-4 col-sm-4">
+      <p>Owner: <%= @boat.owner.email %></p>
+      <p>Name: <%= @boat.name %></p>
+      <p>Category: <%= @boat.category %></p>
+      <p>Model: <%= @boat.model %></p>
+      <p>Address: <%= @boat.address %></p>
+      <p>Description: <%= @boat.description %></p>
+      <p>Capacity: <%= @boat.capacity %></p>
+      <p>Price: <%= @boat.price %></p>
+      <p>Rating: <%= @boat.stars %></p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<% if policy(Booking).new? %>
+<%= link_to 'Book this boat', new_boat_booking_path(@boat) %>
+<% end %>
+<% if policy(@boat).edit? %>
+<%= link_to 'Edit', edit_boat_path(@boat) %>
+<% end %>
+<%= link_to 'Back', boats_path %>
 </div>
 
