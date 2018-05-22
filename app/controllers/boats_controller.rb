@@ -2,22 +2,26 @@ class BoatsController < ApplicationController
   before_action :set_boat, only: [:show, :edit, :update, :destroy]
 
   def index
-    @boats = Boat.all
+    @boats = policy_scope(Boat).order(created_at: :desc)
   end
 
   def show
+    authorize @boat
   end
 
   def new
     @boat = Boat.new
+    authorize @boat
   end
 
   def edit
+    authorize @boat
   end
 
   def create
     @boat = Boat.new(boat_params)
     @boat.user = current_user
+    authorize @boat
     @boat.save!
     if @boat.save
       redirect_to boat_path(@boat)
@@ -28,6 +32,7 @@ class BoatsController < ApplicationController
 
   def update
     @boat.update(boat_params)
+    authorize @boat
     if @boat.update(boat_params)
       redirect_to boat_path(@boat)
     else
@@ -36,6 +41,7 @@ class BoatsController < ApplicationController
   end
 
   def destroy
+    authorize @boat
     @boat.destroy
     redirect_to boats_path(@boat)
   end
