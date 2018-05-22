@@ -8,7 +8,9 @@
   <p>Capacity: <%= @boat.capacity %></p>
   <p>Price: <%= @boat.price %></p>
   <p>Rating: <%= @boat.stars %></p>
-  <%= link_to 'Edit', edit_boat_path(@boat) %> |
+  <% if policy(boat).edit? %>
+    <%= link_to 'Edit', edit_boat_path(@boat) %>
+  <% end %>
   <%= link_to 'Back', boats_path %>
 </div>
 
