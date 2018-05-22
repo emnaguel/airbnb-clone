@@ -1,28 +1,104 @@
-<br><br><br>
-<h1>--------------OWNER--------------</h1>
+<div class="under-footer">
+  <div class="container text-center">
+    <h1>--------------OWNER--------------</h1>
+    <h2>My boats</h2>
+    <% if policy(Boat).create? %>
+      <%= link_to 'New Boat', new_boat_path, class: 'btn btn-primary' %>
+    <% end %>
+    <div class="row">
+      <% @boats.each do |boat| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+          <div class="card-category"><%= boat.category %></div>
+          <div class="card-description">
+            <h2><%= boat.name %></h2>
+            <p><%= boat.address %></p>
+          </div>
+          <% if policy(boat).show? %>
+            <%= link_to "", boat_path(boat), class:'card-link'%>
+          <% end %>
+          </div>
+          <div>
+            <% if policy(boat).edit? %>
+              <%= link_to edit_boat_path(boat) do %>
+                <i class="far fa-edit"></i>
+              <% end %>
+            <% end %>
+            <% if policy(boat).destroy? %>
+              <%= link_to boat_path(boat), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <h2>My reservations</h2>
+    <div class="row">
+      <% @bookings_as_owner.each do |booking| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+          <div class="card-category"><%= boat.category %></div>
+          <div class="card-description">
+            <h2><%= booking.user.email %></h2>
+            <h2><%= booking.boat.name %></h2>
+          </div>
+          <% if policy(booking).show? %>
+            <%= link_to "", booking_path(booking), class:'card-link'%>
+          <% end %>
+          </div>
+          <div>
+            <% if policy(booking).edit? %>
+              <%= link_to edit_booking_path(booking) do %>
+                <i class="far fa-edit"></i>
+              <% end %>
+            <% end %>
+            <% if policy(booking).destroy? %>
+              <%= link_to booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
 
-<h2>My boats</h2>
-<% @boats.each do |boat| %>
-  <p><%= boat.name %></p>
-  <%= link_to 'show', boat_path(boat) %>
-  <%= link_to 'edit', edit_boat_path(boat) %>
-  <%= link_to 'delete', boat_path(boat), method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+    <h1>--------------CLIENT--------------</h1>
+    <div class="row">
+      <% @bookings_as_client.each do |booking| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+          <div class="card-category">Category</div>
+          <div class="card-description">
+            <h2><%= booking.user.email %></h2>
+            <h2><%= booking.boat.name %></h2>
+          </div>
+          <% if policy(booking).show? %>
+            <%= link_to "", booking_path(booking), class:'card-link'%>
+          <% end %>
+          </div>
+          <div>
+            <% if policy(booking).edit? %>
+              <%= link_to edit_booking_path(booking) do %>
+                <i class="far fa-edit"></i>
+              <% end %>
+            <% end %>
+            <% if policy(booking).destroy? %>
+              <%= link_to booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<h2>My bookings</h2>
-<% @bookings_as_owner.each do |booking| %>
-  <p><%= booking.start_date %></p>
-  <%= link_to 'show', booking_path(booking) %>
-  <%= link_to 'edit', edit_booking_path(booking) %>
-  <%= link_to 'delete', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
 
 
-<h1>--------------CLIENT--------------</h1>
 
-<% @bookings_as_client.each do |booking| %>
-  <p><%= booking.start_date %></p>
-  <%= link_to 'show', booking_path(booking) %>
-  <%= link_to 'edit', edit_booking_path(booking) %>
-  <%= link_to 'delete', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+
+
+
+
