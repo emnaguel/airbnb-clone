@@ -1,4 +1,4 @@
-class BoatPolicy < ApplicationPolicy
+class BookingPolicy < ApplicationPolicy
 
   def show?
     scope.where(:id => record.id).exists?
@@ -13,7 +13,7 @@ class BoatPolicy < ApplicationPolicy
   end
 
   def update?
-    record.owner == user
+    record.user == user
   end
 
   def edit?
@@ -21,7 +21,7 @@ class BoatPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.owner == user
+    record.user == user
   end
 
 

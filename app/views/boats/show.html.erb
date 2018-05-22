@@ -1,5 +1,5 @@
 <div class="container">
-  <p>Owner: <%= @boat.user.email %></p>
+  <p>Owner: <%= @boat.owner.email %></p>
   <p>Name: <%= @boat.name %></p>
   <p>Category: <%= @boat.category %></p>
   <p>Model: <%= @boat.model %></p>
@@ -8,6 +8,9 @@
   <p>Capacity: <%= @boat.capacity %></p>
   <p>Price: <%= @boat.price %></p>
   <p>Rating: <%= @boat.stars %></p>
+  <% if policy(Booking).new? %>
+    <%= link_to 'Book this boat', new_boat_booking_path(@boat) %>
+  <% end %>
   <% if policy(@boat).edit? %>
     <%= link_to 'Edit', edit_boat_path(@boat) %>
   <% end %>
