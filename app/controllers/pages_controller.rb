@@ -3,13 +3,10 @@ class PagesController < ApplicationController
   def home
   end
 
-  def owner_dashboard
+  def dashboard
     @boats = Boat.where(owner: current_user)
-    @bookings = Booking.where(owner: current_user)
-  end
-
-  def client_dashboard
-    @bookings = Booking.where(user: current_user)
+    @bookings_as_owner = Booking.where(owner: current_user)
+    @bookings_as_client = Booking.where(user: current_user)
   end
 
 end
