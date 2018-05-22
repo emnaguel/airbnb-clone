@@ -20,7 +20,7 @@ class BoatsController < ApplicationController
 
   def create
     @boat = Boat.new(boat_params)
-    @boat.user = current_user
+    @boat.owner = current_user
     authorize @boat
     @boat.save!
     if @boat.save
