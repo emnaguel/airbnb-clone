@@ -5,11 +5,10 @@ class Boat < ApplicationRecord
   validates :name, presence: :true
   validates :address, presence: :true
   validates :description, presence: :true
-
   validates :price, presence: :true
   validates :model, presence: :true
   validates :capacity, presence: :true
-
+  mount_uploader :photo, PhotoUploader
 end
 
 

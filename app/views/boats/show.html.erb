@@ -13,7 +13,8 @@
         <p>Rating: <%= @boat.stars %></p>
       </div>
       <div class= "col-sm-4">
-        <div class="boat" style="background-image: url('https://www.jetfunevasion.com/images/home/initiation-jetski-frejus.jpg') ">
+        <div class="boat">
+          <%= cl_image_tag @boat.photo, height: 300, width: 400, crop: :fill %>
         </div>
       </div>
     </div>
