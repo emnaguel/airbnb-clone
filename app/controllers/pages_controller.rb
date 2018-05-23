@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 
   def dashboard_owner
     @boats = Boat.where(owner: current_user)
-    @bookings_as_owner = Booking.where(owner: current_user)
+    @bookings_as_owner = Booking.where(owner: current_user.id)
   end
 
   def dashboard_renter
