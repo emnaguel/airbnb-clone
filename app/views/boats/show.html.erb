@@ -13,14 +13,12 @@
         <p>Rating: <%= @boat.stars %></p>
       </div>
       <div class= "col-sm-4">
-        <div class="boat" style="background-image: url('https://www.jetfunevasion.com/images/home/initiation-jetski-frejus.jpg') ">
-        </div>
+        <% if @marker.present? %>
+          <div id="map" style="width: auto; height: 350px;" data-markers="<%= @marker.to_json %>"></div>
+        <% end %>
       </div>
     </div>
   </div>
-
-
-
 
 
   <% if policy(Booking).new? %>

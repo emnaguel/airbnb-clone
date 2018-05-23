@@ -2,12 +2,24 @@ class BoatsController < ApplicationController
   before_action :set_boat, only: [:show, :edit, :update, :destroy]
 
 
-
   def index
     @boats = policy_scope(Boat).order(created_at: :desc)
+    @boats = Boat.where.not(latitude: nil, longitude: nil)
+    @markers = @boats.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
   end
 
   def show
+   @marker = [{
+      lat: @boat.latitude,
+      lng: @boat.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }] if (@boat.latitude.present? && @boat.longitude.present?)
     authorize @boat
   end
 
@@ -50,11 +62,11 @@ class BoatsController < ApplicationController
 
   private
 
-    def set_boat
-      @boat = Boat.find(params[:id])
-    end
+  def set_boat
+    @boat = Boat.find(params[:id])
+  end
 
-    def boat_params
-      params.require(:boat).permit(:name, :address, :description, :stars, :user_id, :category, :model, :capacity, :price)
-    end
+  def boat_params
+    params.require(:boat).permit(:name, :address, :description, :stars, :user_id, :category, :model, :capacity, :price)
+  end
 end
