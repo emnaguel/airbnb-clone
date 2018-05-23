@@ -1,6 +1,10 @@
 <div class="container infos">
   <div class="under-footer">
     <div class="row">
+     <div class="boat">
+     <%= cl_image_tag @boat.photo, height: 300, width: 400, crop: :fill %>
+      </div>
+      <div class = "row">
       <div class= "col-sm-offset-4 col-sm-4">
         <p>Owner: <%= @boat.owner.email %></p>
         <p>Name: <%= @boat.name %></p>
@@ -13,15 +17,13 @@
         <p>Rating: <%= @boat.stars %></p>
       </div>
       <div class= "col-sm-4">
-        <div class="boat">
-          <%= cl_image_tag @boat.photo, height: 300, width: 400, crop: :fill %>
-        </div>
+        <% if @marker.present? %>
+          <div id="map" style="width: auto; height: 350px;" data-markers="<%= @marker.to_json %>"></div>
+        <% end %>
       </div>
     </div>
   </div>
-
-
-
+  </div>
 
 
   <% if policy(Booking).new? %>
