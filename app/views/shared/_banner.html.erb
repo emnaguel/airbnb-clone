@@ -1,17 +1,11 @@
 <div class="container-banner">
-  <h1>WATBOAT</h1>
-  <p>Rent your boat</p>
+  <h1>SAILY</h1>
+  <p><span id="banner-typed-text"></span></p>
   <form action="" class="form-inline">
-    <div class="form-group" >
-    <%= select_tag "timezone", options_from_collection_for_select(
-    ActiveSupport::TimeZone.all.
-    map { |tz| tz.tzinfo }.
-    sort_by { |tzinfo| tzinfo.name },
-    :name, :name),
-    class: 'select2'%>
-    </div>
     <div class="form-group" class="form-inline">
-    <input type="text" class="form-control" placeholder="When?">
+    <input type="text" class="form-control" id="boat_address" placeholder="Where?">
+    <input type="text" class="form-control datepicker" placeholder="Start date?">
+    <input type="text" class="form-control datepicker" placeholder="End date?">
     </div>
     <input type="submit" value="Search" class="btn btn-primary">
    </form>
