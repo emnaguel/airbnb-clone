@@ -1,11 +1,11 @@
+
+<%= cl_image_tag @boat.photo, class: "banner-show" %>
 <div class="container infos">
   <div class="under-footer">
     <div class="row">
      <div class="boat">
-     <%= cl_image_tag @boat.photo, height: 300, width: 400, crop: :fill %>
-      </div>
-      <div class = "row">
-      <div class= "col-sm-offset-4 col-sm-4">
+
+      <div class= "col-sm-offset-3 col-sm-3">
         <p>Owner: <%= @boat.owner.email %></p>
         <p>Name: <%= @boat.name %></p>
         <p>Category: <%= @boat.category %></p>
@@ -18,11 +18,11 @@
       </div>
       <div class= "col-sm-4">
         <% if @marker.present? %>
-          <div id="map" style="width: auto; height: 350px;" data-markers="<%= @marker.to_json %>"></div>
+        <div id="map" style="width: auto; height: 350px;" data-markers="<%= @marker.to_json %>"></div>
         <% end %>
       </div>
+
     </div>
-  </div>
   </div>
 
 
@@ -39,6 +39,5 @@
   <%= link_to root_path, class: "btn btn-secondary troisieme" do %>
   <i class="fas fa-undo-alt">Back</i>
   <% end %>
-
 
 </div>
