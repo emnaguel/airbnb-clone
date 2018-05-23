@@ -1,20 +1,32 @@
 .btn {
  color: white;
- background-color: #469AE0;
+ background-color: #004E89;
+ border: none;
+ margin-left: 16px;
+ margin-top: -10px;
 }
 
 .premier {
   margin-left: 380px;
   margin-top: 30px;
+  margin-bottom: 30px;
 
 }
 
 .deuxieme {
   margin-left: 5px;
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .troisieme {
   margin-left: 5px;
   margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: 50px;
 }

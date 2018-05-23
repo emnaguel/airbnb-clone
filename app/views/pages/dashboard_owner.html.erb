@@ -1,5 +1,5 @@
 <div class="under-footer">
-  <div class="container text-center">
+  <div class="container text-center infoss">
 
   <div class="tabs">
     <%= link_to dashboard_owner_path, class: 'tab active' do %>
@@ -10,10 +10,13 @@
     <% end %>
   </div>
 
-    <h2>My boats</h2>
-    <% if policy(Boat).create? %>
+    <h2>
+      My boats <% if policy(Boat).create? %>
       <%= link_to 'New Boat', new_boat_path, class: 'btn btn-primary' %>
     <% end %>
+
+    </h2>
+
     <div class="row">
       <% @boats.each do |boat| %>
         <div class="col-xs-12 col-sm-4">
@@ -42,8 +45,9 @@
         </div>
       <% end %>
     </div>
-
-    <h2>My reservations</h2>
+    <% unless @bookings_as_owner.first == nil %>
+      <h2>My reservations</h2>
+    <% end %>
     <div class="row">
       <% @bookings_as_owner.each do |booking| %>
         <div class="col-xs-12 col-sm-4">
