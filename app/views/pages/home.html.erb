@@ -10,7 +10,7 @@
           <h2><%= boat.name %></h2>
           <p><%= boat.address %></p>
         </div>
-        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+        <img class="card-user" src=<%= current_user.photo %>>
         <% if policy(boat).show? %>
           <%= link_to "", boat_path(boat), class:'card-link'%>
         <% end %>
