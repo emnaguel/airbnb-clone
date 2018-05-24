@@ -15,7 +15,24 @@
         <p>Capacity: <%= @boat.capacity %></p>
         <p>Price: <%= @boat.price %></p>
         <p>Rating: <%= @boat.stars %></p>
+        <form action="" class="form-inline">
+          <div class="form-group" class="form-inline">
+          <input type="text" class="form-control" id="book-a-boat" placeholder="End date?" data-booking-dates="<%= @bookings.to_json %>">
+          </div>
+        </form>
       </div>
+
+<div class="container under-footer">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1>New Booking</h1>
+      <%= render 'form_booking' %>
+      <%= link_to 'Back', bookings_path %>
+    </div>
+  </div>
+</div>
+
+
       <div class= "col-sm-4">
         <% if @marker.present? %>
         <div id="map" style="width: auto; height: 350px;" data-markers="<%= @marker.to_json %>"></div>
