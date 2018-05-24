@@ -23,14 +23,24 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.boat = Boat.find(params[:boat_id])
+
+    possible_booking = true
+    @booking.boat.bookings.each do |booking|
+      if (@booking.start_date > booking.start_date) && (@booking.start_date < booking.end_date) || (@booking.end_date > booking.start_date) && (@booking.end_date < booking.end_date)
+        possible_booking = false
+      end
+    end
+
     @booking.total_price = @booking.boat.price * (@booking.end_date - @booking.start_date)
     @booking.status = true
     authorize @booking
-    @booking.save!
-    if @booking.save
-      redirect_to dashboard_renter_path
-    else
-      render :new
+    if possible_booking
+      @booking.save!
+      if @booking.save
+        redirect_to dashboard_renter_path
+      else
+        render :new
+      end
     end
   end
 
