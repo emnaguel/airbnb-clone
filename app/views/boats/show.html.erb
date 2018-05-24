@@ -15,23 +15,11 @@
         <p>Capacity: <%= @boat.capacity %></p>
         <p>Price: <%= @boat.price %></p>
         <p>Rating: <%= @boat.stars %></p>
-        <form action="" class="form-inline">
-          <div class="form-group" class="form-inline">
-          <input type="text" class="form-control" id="book-a-boat" placeholder="End date?" data-booking-dates="<%= @bookings.to_json %>">
-          </div>
-        </form>
+        <% if policy(Booking).new? %>
+          <h1>New Booking</h1>
+          <%= render 'form_booking' %>
+        <% end %>
       </div>
-
-<div class="container under-footer">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <h1>New Booking</h1>
-      <%= render 'form_booking' %>
-      <%= link_to 'Back', bookings_path %>
-    </div>
-  </div>
-</div>
-
 
       <div class= "col-sm-4">
         <% if @marker.present? %>
@@ -41,20 +29,4 @@
 
     </div>
   </div>
-
-
-  <% if policy(Booking).new? %>
-  <%= link_to new_boat_booking_path(@boat), class: "btn btn-secondary premier" do %>
-  <i class="fas fa-euro-sign"> Book this boat</i>
-  <% end %>
-  <% end %>
-  <% if policy(@boat).edit? %>
-  <%= link_to edit_boat_path(@boat),class: "btn btn-secondary deuxieme" do %>
-  <i class="fas fa-edit"> Edit</i>
-  <% end %>
-  <% end %>
-  <%= link_to root_path, class: "btn btn-secondary troisieme" do %>
-  <i class="fas fa-undo-alt">Back</i>
-  <% end %>
-
 </div>

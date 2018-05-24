@@ -1,6 +1,13 @@
 .card {
-  height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  border-style: solid;
+  border-color: grey;
+  border-width: 1px;
+  height: 250px;
+  position: relative;
+}
+.card-img {
+  height: 200px;
+  text-shadow: 0 5px 8px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
@@ -25,12 +32,26 @@
   bottom: 10px;
   left: 10px;
 }
+.card-icons {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  position: relative;
+}
+.card-icons i {
+  margin-top: 15px;
+  margin-right: 30px;
+  margin-left: 20px;
+  color: $my-blue;
+  font-weight: bold;
+  font-size: 18px;
+}
 .card-description h2 {
   font-size: 24px;
 }
 .card-description p {
   font-size: 14px;
-  opacity: 0.7;
+  opacity: 0.9;
   font-weight: lighter;
 }
 .card-link {
