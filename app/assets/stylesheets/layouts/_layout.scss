@@ -1,5 +1,10 @@
+body {
+  background-color: white;
+}
+
+
 .contenu {
-  min-height: calc(100vh - 70px) !important;
+min-height: calc(100vh - 70px) !important;
 }
 
 .under-footer {
@@ -12,7 +17,19 @@
 }
 
 #map {
+  width: 600px;
+
   height: 350px;
   background-size: cover;
   border-color: black;
+}
+
+.boat {
+        width: 1200px;
+    margin-left: 31px;
+}
+
+
+.col-sm-4 {
+    width: 49.333333%;
 }

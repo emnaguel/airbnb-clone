@@ -1,5 +1,13 @@
+.infoss {
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1),0 1px 0 0 rgba(0,0,0,0.03);
+  width: 800px;
+  height: 563px;
+
+}
+
+
 .tabs {
-  background: #53443F;
+  background: #004E89;
   display: flex;
   padding: 10px 10px 0 10px
 }
@@ -25,14 +33,17 @@
   flex: 0 0 50%;
   text-align: center;
   padding: 20px 0;
+  background-color: #588FB8;
 }
 .tab:first-child {
   border-radius: 10px 0 0 0;
 }
 .tab:last-child {
   border-radius: 0 10px 0 0;
+  background-color: #588FB8;
 }
 .tab.active {
   background: white;
   color: black;
 }
+
