@@ -10,15 +10,15 @@ flatpickr(".datepickr", {mode: 'range', minDate: "today",
   enable: [
     function(date) {
       let status = true
-      // const dates_array = JSON.parse(document.getElementById('book-a-boat-start').dataset.bookingDates);
-      // console.log(date);
-      // dates_array.forEach((dates) => {
-      //   console.log(dates);
-      //   if (Date(date) > Date(dates[0]) && Date(date) < Date(dates[1])) {
-      //     status = false
-      //   }
-      //   });
-      // console.log(status);
+      const dates_array = JSON.parse(document.getElementById('book-a-boat-start').dataset.bookingdates);
+      console.log(dates_array);
+      console.log(date);
+      dates_array.forEach((dates) => {
+       if (date > new Date(dates[0]) && date < new Date(dates[1])) {
+          status = false
+       }
+       });
+      console.log(status);
       return status;
     }
 ]});
