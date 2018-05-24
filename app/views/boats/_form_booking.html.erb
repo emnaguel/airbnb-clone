@@ -1,0 +1,7 @@
+<%= simple_form_for([@boat, @booking]) do |f| %>
+    <%= f.input :start_date, as: :string, placeholder: "Start date?", input_html: { class: "datepickr", id: 'book-a-boat-start', data: {bookingdates: @bookings.to_json} } %>
+    <%= f.input :end_date, as: :string, placeholder: "End date?", input_html: { class: "datepickr", id: 'book-a-boat-end', data: {bookingdates: @bookings.to_json} } %>
+    <%= f.button :submit, class: 'btn btn-primary'%>
+<% end %>
+
+<!-- data-booking-dates="<%= @bookings.to_json %>" -->

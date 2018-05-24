@@ -1,16 +1,16 @@
 .container-banner {
-  background-image: asset-url('banner.jpg'); filter: grayscale(70%);
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), asset-url('banner2.jpg');
   background-size: cover !important;
   height: 100vh;
   color: black;
   text-align: center;
-  padding-top: 40vh;
+  padding-top: 15vh;
   }
 
 
 
 .banner h1 {
-  font-family : Arial, sans-serif, monospace;
+  font-family : $title-font;
   font-weight: bold;
   letter-spacing: 10px;
   font-size: 64px;
@@ -32,15 +32,3 @@
   height: 40px;
   border-radius: 5px
 }
-
-.card {
-  margin: 30px;
-  height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-size: cover !important;
-  background-position: center;
-  color: white;
-  position: relative;
-}
-
-

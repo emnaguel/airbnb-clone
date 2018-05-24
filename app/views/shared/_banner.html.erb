@@ -2,7 +2,7 @@
 <div class="container-banner">
   <h1>SAILY</h1>
   <p><span id="banner-typed-text"></span></p>
-  <br><br><br><br>
+  <br><br><br>
 
       <%= form_tag root_path, method: :get, class: "form-inline" do %>
           <%= text_field_tag :category,
@@ -19,17 +19,18 @@
           <%= text_field_tag :start_date,
           params[:startdate],
           class: "form-control datepicker",
+          id: "search-start-date",
           placeholder: "Start date?"
           %>
           <%= text_field_tag :end_date,
           params[:enddate],
           class: "form-control datepicker",
+          id: "secondRangeInput"
           placeholder: "End date?"
           %>
           <%= submit_tag "Search", class: "btn btn-info" %>
 
     <% end %>
-
 </div>
 
 
