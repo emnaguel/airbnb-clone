@@ -1,0 +1,16 @@
+.paragraphe {
+
+  margin-bottom: -138px;
+  color: white;
+  margin-left: 420px;
+
+}
+
+.show-banner {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), asset-url('banner.jpg');
+  background-size: cover !important;
+  height: 100vh;
+  color: black;
+  text-align: center;
+  padding-top: 15vh;
+}
