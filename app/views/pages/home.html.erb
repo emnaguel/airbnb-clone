@@ -4,8 +4,9 @@
 <div class="container text-center titre">
   <h1 class= "titre">Available Boats</h1>
 
-   <button id="clickme"><i class="fas fa-map-marker"> Show on map</i></button>
 
+<a href="#map"><button onClick="scroll(0, 100);" id="clickme"><i class="fas fa-map-marker"> Show on map</i></button>
+</a>
   <div class="row">
     <% @boats.each do |boat| %>
       <div class="col-xs-12 col-sm-4">

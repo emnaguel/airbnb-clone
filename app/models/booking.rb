@@ -7,4 +7,15 @@ class Booking < ApplicationRecord
   validates :start_date, presence: :true
   validates :end_date, presence: :true
   validates :total_price, presence: :true
-end
+
+
+  include PgSearch
+  pg_search_scope :global_search,
+    against: [ :start_date, :end_date ],
+    associated_against: {
+      boat: [ :category, :address ]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
+  end
