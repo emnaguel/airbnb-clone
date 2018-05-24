@@ -1,13 +1,38 @@
+
 <div class="container-banner">
   <h1>SAILY</h1>
   <p><span id="banner-typed-text"></span></p>
   <br><br><br><br>
-  <form action="" class="form-inline">
-    <div class="form-group" class="form-inline">
-    <input type="text" class="form-control" id="boat_address" placeholder="Where?">
-    <input type="text" class="form-control datepicker" placeholder="Start date?">
-    <input type="text" class="form-control datepicker" placeholder="End date?">
-    </div>
-    <input type="submit" value="Search" class="btn btn-primary">
-   </form>
+
+      <%= form_tag root_path, method: :get, class: "form-inline" do %>
+          <%= text_field_tag :category,
+          params[:category],
+          class: "form-control",
+          placeholder: "What?"
+          %>
+          <%= text_field_tag :where,
+          params[:where],
+          class: "form-control",
+          placeholder: "Where?",
+          id: "boat_address"
+          %>
+          <%= text_field_tag :start_date,
+          params[:startdate],
+          class: "form-control datepicker",
+          placeholder: "Start date?"
+          %>
+          <%= text_field_tag :end_date,
+          params[:enddate],
+          class: "form-control datepicker",
+          placeholder: "End date?"
+          %>
+          <%= submit_tag "Search", class: "btn btn-info" %>
+
+    <% end %>
+
 </div>
+
+
+
+
+<!-- the list of movies -->
