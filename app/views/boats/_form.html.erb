@@ -2,7 +2,7 @@
     <%= f.input :name %>
     <%= f.input :category, collection: Boat::CATEGORIES %>
     <%= f.input :model %>
-    <%= f.input :address %>
+    <%= f.input :address, id: "boat_address" %>
     <%= f.input :description %>
     <%= f.input :capacity %>
     <%= f.input :price %>

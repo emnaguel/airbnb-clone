@@ -1,11 +1,13 @@
 .container-banner {
   background-image: asset-url('banner.jpg'); filter: grayscale(70%);
   background-size: cover !important;
-  height: 75vh;
-  color:#black;
+  height: 100vh;
+  color: black;
   text-align: center;
-  padding-top: 30vh;
+  padding-top: 40vh;
   }
+
+
 
 .banner h1 {
   font-family : Arial, sans-serif, monospace;
