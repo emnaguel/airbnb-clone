@@ -19,10 +19,10 @@ class BoatsController < ApplicationController
       lng: @boat.longitude#,
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
       }] if (@boat.latitude.present? && @boat.longitude.present?)
-    @bookings = []
-    @boat.bookings.each do |booking|
-      @bookings << [booking.start_date, booking.end_date]
-    end
+    # @bookings = []
+    # @boat.bookings.each do |booking|
+    #   @bookings << [booking.start_date, booking.end_date]
+    # end
     @booking = Booking.new
     authorize @boat
   end
