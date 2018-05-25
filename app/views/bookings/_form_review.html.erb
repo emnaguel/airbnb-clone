@@ -1,0 +1,5 @@
+<%= simple_form_for([@booking, @review]) do |f| %>
+    <%= f.input :content, placeholder: "What did you think about the boat?" %>
+    <%= f.input :rating, collection: Review::RATES %>
+    <%= f.button :submit, class: 'btn btn-primary'%>
+<% end %>
