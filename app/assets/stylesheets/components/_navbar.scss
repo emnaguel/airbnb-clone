@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between!important;
-  background-color: transparent;
+  background-color: white;
   transition: 0.5s background-color ease;
 }
 
@@ -15,6 +15,11 @@
 .navbar-wagon-white {
   background-color: white;
 }
+.navbar-wagon-transparent {
+  background-color: transparent;
+}
+
+
 /* Logo */
 .navbar-wagon-brand img {
   height: 50px;

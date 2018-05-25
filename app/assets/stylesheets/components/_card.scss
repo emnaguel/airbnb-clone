@@ -1,19 +1,13 @@
-.cards {
-  display:flex;
-  justify-content: space-between;
-  align-item: space-evenly;
-}
-
 
 .card {
   border-style: solid;
-  background-size: cover !important;
-  color: white;
+  border-color: grey;
   border-width: 1px;
-  height: 185px;
+  height: 250px;
   position: relative;
-  margin-bottom: 33px;
-  width: 355px;
+  color: white;
+  background-size: cover;
+  margin-bottom: 30px;
 }
 
 

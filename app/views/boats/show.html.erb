@@ -2,6 +2,7 @@
 <%= cl_image_tag @boat.photo, class: "banner-show" %>
 <div class="container infos">
   <div class="under-footer">
+
     <div class="row box">
       <div class= "col-sm-offset-3 col-sm-3">
         <p>Owner: <%= @boat.owner.email %></p>
@@ -27,12 +28,43 @@
       </div>
     </div>
 
-    <div class="col-xs-6 carte">
-        <% if @marker.present? %>
-        <div id="map" class="little-map" style="width: auto; height: 350px;" data-markers="<%= @marker.to_json %>"></div>
-        <% end %>
-      </div>
-
+    <div class="row">
+ <div class="col-xs-6 ligne">
+      <p><i class="fas fa-ship"></i><%=       @boat.category     %> <i class="fas fa-users"></i><%=        @boat.capacity      %>      travelleurs</p>
     </div>
   </div>
+</div>
+
+
+
+<div class="row box">
+ <div class="col-xs-6 texte">
+
+  <p><strong>Owner:</strong> <%= @boat.owner.email %></p>
+
+
+  <p><strong>Model:</strong> <%= @boat.model %></p>
+  <p><strong> Address:</strong> <%= @boat.address %> </p>
+  <p><strong>Description:</strong> <%= @boat.description %></p>
+
+  <p><strong>Price:</strong> <%= @boat.price %></p>
+  <p><strong>Rating:</strong> <%= @boat.stars %></p>
+
+  <div class = "another-text">
+    <% if policy(Booking).new? %>
+    <h5><strong>New Booking</strong></h5>
+      <%= render 'form_booking' %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-xs-6 carte">
+    <% if @marker.present? %>
+    <div id="map" class="little-map" style="width: auto; height: 350px;" data-markers="<%= @marker.to_json %>"></div>
+    <% end %>
+  </div>
+
+</div>
+</div>
+</div>
 </div>

@@ -11,6 +11,23 @@
   <p>Total price: <%= @booking.total_price %></p>
   <p>Status: <%= @booking.status %></p>
 
+
+<div class="container contain under-footer">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 paragraphe">
+    <p><strong>Owner:</strong> <%= @booking.owner.email %></p>
+    <p><strong>Renter:</strong> <%= @booking.user.email %></p>
+    <p><strong>Boat:</strong> <%= @booking.boat.name %></p>
+    <p><strong>Start date:</strong> <%= @booking.start_date %></p>
+    <p><strong>End date:</strong> <%= @booking.end_date %></p>
+    <p><strong>Total price:</strong> <%= @booking.total_price %></p>
+    <p><strong>Status:</strong> <%= @booking.status %></p>
+    <% if policy(@booking).edit? %>
+    <%= link_to 'Edit', edit_booking_path(@booking), class: "btn btn-warning" %>
+    <% end %>
+    <%= link_to 'Back', dashboard_renter_path, class: "btn btn-danger" %>
+  </div>
+
   <% unless @booking.reviews.first == nil %>
     <h3>Review</h3>
     <p>Review: <%= @booking.reviews.first.content %></p>
