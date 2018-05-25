@@ -1,34 +1,46 @@
 
+
 <%= cl_image_tag @boat.photo, class: "banner-show" %>
 <div class="container infos">
   <div class="under-footer">
-    <div class="row box">
-
-   <div class="col-xs-6 texte">
-        <p><strong>Owner:</strong> <%= @boat.owner.email %></p>
-        <p><strong>Name:</strong> <%= @boat.name %></p>
-        <p><strong>Category:</strong> <%= @boat.category %></p>
-        <p><strong>Model:</strong> <%= @boat.model %></p>
-        <p><strong> Address:</strong> <%= @boat.address %> </p>
-        <p><strong>Description:</strong> <%= @boat.description %></p>
-        <p><strong>Capacity:</strong> <%= @boat.capacity %></p>
-        <p><strong>Price:</strong> <%= @boat.price %></p>
-        <p><strong>Rating:</strong> <%= @boat.stars %></p>
-
-        <div class = "another-text">
-        <% if policy(Booking).new? %>
-          <h5><strong>New Booking</strong></h6>
-          <%= render 'form_booking' %>
-        <% end %>
+    <div class ="grid">
+      <div class= "one-grid">
+        <h4><strong><%= @boat.name %></strong> </h4>
+        <p><i class="fas fa-ship"></i><%=@boat.category%> <i class="fas fa-users"></i><%=@boat.capacity%>      travelleurs <i class="fas fa-euro-sign"></i><%= @boat.price %><%= @boat.stars %></p></p>
       </div>
-    </div>
 
-    <div class="col-xs-6 carte">
+
+      <div class="two-grid texte">
+        <p><%= @boat.owner.email %></p>
+        <p><%= @boat.address %></p>
+        <p><%= @boat.description %></p>
+      </div>
+
+
+
+      <div class = "three-grid another-text">
+        <% if policy(Booking).new? %>
+        <h5><strong>New Booking</strong></h6>
+          <%= render 'form_booking' %>
+          <% end %>
+        </div>
+
+
+      <div class="forth-grid carte">
         <% if @marker.present? %>
-        <div id="map" class="little-map" style="width: auto; height: 350px;" data-markers="<%= @marker.to_json %>"></div>
+        <div id="map" class="little-map" style="width: 384px; height: 350px;" data-markers="<%= @marker.to_json %>"></div>
         <% end %>
       </div>
 
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+

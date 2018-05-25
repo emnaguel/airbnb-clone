@@ -1,32 +1,40 @@
-.texte {
-  margin-left: 340px;
-}
-
-.carte {
-
-  margin-left: 680px;
-  margin-top: -493px;
-}
-
 .another-text {
   background-color: #EAEAEA;
-  margin-bottom: 20px;
 }
 
-.another-text h5 {
-  text-align: center;
-
-
-}
-
-
-.another-text {
-  margin-top: 29px;
-  margin-left: -1px;
-  margin-right: 156px;
-}
 
 .little-map {
-  margin-top: -123px;
+  width:384px;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns: 1fr 300px 300px 1fr;
+  grid-template-rows: 10% 50% 30% 10%;
+  border: solid black;
+};
+
+.one-grid {
+grid-row: 1/span 1;
+grid-column: 2/span 3;
+border: solid black;
+}
+
+.two-grid {
+grid-row: 2/span 1;
+grid-column: 2/span 1;
+border: solid black;
+}
+
+.three-grid {
+  grid-row: 3/span 1;
+  grid-column: 2/span 2;
+  border: solid black;
+}
+
+.forth-grid {
+  grid-row: 2 /span 1;
+  grid-column: 3/span 1;
+  border: solid black;
 }
 
