@@ -3,7 +3,9 @@
   <br><br><br><br><br><br>
   <p>Owner: <%= @booking.owner.email %></p>
   <p>Renter: <%= @booking.user.email %></p>
-  <p>Boat: <%= @booking.boat.name %></p>
+  <%= link_to boat_path(@booking.boat) do %>
+    <p>Boat: <%= @booking.boat.name %></p>
+  <% end %>
   <p>Start date: <%= @booking.start_date %></p>
   <p>End date: <%= @booking.end_date %></p>
   <p>Total price: <%= @booking.total_price %></p>
