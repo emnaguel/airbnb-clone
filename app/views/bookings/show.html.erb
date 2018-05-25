@@ -14,7 +14,7 @@
   <% unless @booking.reviews.first == nil %>
     <h3>Review</h3>
     <p>Review: <%= @booking.reviews.first.content %></p>
-    <p>Rating: @booking.reviews.first.rating </p>
+    <p>Rating: <%= @booking.reviews.first.rating %> </p>
     <% 5.times do |i| %>
       <% if i < @booking.reviews.first.rating %>
         <i class="fas fa-star"></i>
