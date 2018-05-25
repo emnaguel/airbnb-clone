@@ -17,8 +17,26 @@
 }
 .navbar-wagon-transparent {
   background-color: transparent;
+  .navbar-wagon-link {
+  color: white;
+  font-size: 14px;
+  }
+  .navbar-wagon-link:hover {
+    color: #004E89;
+    text-decoration: none;
+  }
+  .navbar-wagon-brand {
+    color: white;
+  }
+  .navbar-wagon-brand:hover {
+    color: #004E89;
+    text-decoration: none;
+  }
 }
 
+.navbar-wagon-brand {
+  font-size: 40px;
+}
 
 /* Logo */
 .navbar-wagon-brand img {
@@ -49,6 +67,7 @@
 .navbar-wagon-link {
   color: #004E89;
   font-size: 14px;
+  font-weight: bold;
 }
 .navbar-wagon-link:hover {
   color: #004E89;

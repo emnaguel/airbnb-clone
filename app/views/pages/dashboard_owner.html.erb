@@ -1,6 +1,4 @@
 <div class="under-footer">
-  <div class="container text-center infoss">
-
   <div class="tabs">
     <%= link_to dashboard_owner_path, class: 'tab active' do %>
       <h3>Owner</h3>
@@ -9,11 +7,13 @@
       <h3>Renter</h3>
     <% end %>
   </div>
+  <div class="container text-center infoss">
 
+    <h2>MY BOATS</h2>
     <div class="row cards">
       <% @boats.each do |boat| %>
-        <div class="col-xs-12 col-sm-6">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path boat.photo, height: 300, width: 400, crop: :fill %>')">
+        <div class="col-xs-12 col-sm-4">
+          <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path boat.photo, height: 300, width: 400, crop: :fill %>')">
           <div class="card-category"><%= boat.category %></div>
           <div class="card-description">
             <h2><%= boat.name %></h2>
@@ -23,7 +23,7 @@
             <%= link_to "", boat_path(boat), class:'card-link'%>
           <% end %>
           </div>
-          <div>
+          <div class="card-delete">
             <% if policy(boat).edit? %>
               <%= link_to edit_boat_path(boat) do %>
                 <i class="far fa-edit"></i>
@@ -39,22 +39,23 @@
       <% end %>
     </div>
     <% unless @bookings_as_owner.first == nil %>
-      <h2>My reservations</h2>
+      <h2>MY BOOKINGS</h2>
     <% end %>
     <div class="row">
       <% @bookings_as_owner.each do |booking| %>
         <div class="col-xs-12 col-sm-6">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path booking.boat.photo, height: 300, width: 400, crop: :fill %>')">
+          <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path booking.boat.photo, height: 300, width: 400, crop: :fill %>')">
           <div class="card-category"><%= booking.boat.category %></div>
           <div class="card-description">
-            <h2><%= booking.user.email %></h2>
             <h2><%= booking.boat.name %></h2>
+            <p>Rented by <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+            <p>From <%= booking.start_date %> to <%= booking.start_date %></p>
           </div>
           <% if policy(booking).show? %>
             <%= link_to "", booking_path(booking), class:'card-link'%>
           <% end %>
           </div>
-          <div>
+          <div class="card-delete">
             <% if policy(booking).edit? %>
               <%= link_to edit_booking_path(booking) do %>
                 <i class="far fa-edit"></i>
