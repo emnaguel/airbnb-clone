@@ -1,12 +1,19 @@
 
 
 <%= cl_image_tag @boat.photo, class: "banner-show" %>
-<div class="container infos">
-  <div class="under-footer">
+<div class="container under-footer infos">
+
     <div class ="grid">
       <div class= "one-grid">
         <h4><strong><%= @boat.name %></strong> </h4>
-        <p><i class="fas fa-ship"></i><%=@boat.category%> <i class="fas fa-users"></i><%=@boat.capacity%>      travelleurs <i class="fas fa-euro-sign"></i><%= @boat.price %><%= @boat.stars %></p></p>
+        <p><i class="fas fa-ship"></i> <%= @boat.category%>  |  <i class="fas fa-users"> </i><%= @boat.capacity%> travelleurs | <i class="fas fa-euro-sign"></i><%=@boat.price.round %> | <%=@boat.stars %>
+        <% 5.times do |i| %>
+        <% if i < @boat.stars %>
+          <i class="fas fa-star"></i>
+        <% else %>
+          <i class="far fa-star"></i>
+        <% end %>
+      <% end %></p>
       </div>
 
 
@@ -19,28 +26,8 @@
 
 
       <div class = "three-grid another-text">
-
-    <div class="row box">
-      <div class= "col-sm-offset-3 col-sm-3">
-        <p>Owner: <%= @boat.owner.email %></p>
-        <p>Name: <%= @boat.name %></p>
-        <p>Category: <%= @boat.category %></p>
-        <p>Model: <%= @boat.model %></p>
-        <p>Address: <%= @boat.address %> </p>
-        <p>Description: <%= @boat.description %></p>
-        <p>Capacity: <%= @boat.capacity %></p>
-        <p>Price: <%= @boat.price %></p>
-        <p>Rating: <%= @boat.stars %></p>
-        <% 5.times do |i| %>
-        <% if i < @boat.stars %>
-          <i class="fas fa-star"></i>
-        <% else %>
-          <i class="far fa-star"></i>
-        <% end %>
-      <% end %>
-
-        <% if policy(Booking).new? %>
-        <h5><strong>New Booking</strong></h6>
+    <% if policy(Booking).new? %>
+        <h5><strong>New Booking</strong></h5>
           <%= render 'form_booking' %>
           <% end %>
         </div>
@@ -52,46 +39,10 @@
         <% end %>
       </div>
 
-    <div class="row">
- <div class="col-xs-6 ligne">
-      <p><i class="fas fa-ship"></i><%=       @boat.category     %> <i class="fas fa-users"></i><%=        @boat.capacity      %>      travelleurs</p>
     </div>
-  </div>
 </div>
 
 
-
-<div class="row box">
- <div class="col-xs-6 texte">
-
-  <p><strong>Owner:</strong> <%= @boat.owner.email %></p>
-
-
-  <p><strong>Model:</strong> <%= @boat.model %></p>
-  <p><strong> Address:</strong> <%= @boat.address %> </p>
-  <p><strong>Description:</strong> <%= @boat.description %></p>
-
-  <p><strong>Price:</strong> <%= @boat.price %></p>
-  <p><strong>Rating:</strong> <%= @boat.stars %></p>
-
-  <div class = "another-text">
-    <% if policy(Booking).new? %>
-    <h5><strong>New Booking</strong></h5>
-      <%= render 'form_booking' %>
-      <% end %>
-    </div>
-  </div>
-
-  <div class="col-xs-6 carte">
-    <% if @marker.present? %>
-    <div id="map" class="little-map" style="width: auto; height: 350px;" data-markers="<%= @marker.to_json %>"></div>
-    <% end %>
-  </div>
-
-</div>
-</div>
-</div>
-</div>
 
 
 

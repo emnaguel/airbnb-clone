@@ -10,34 +10,38 @@
 .grid {
   display:grid;
   grid-template-columns: 1fr 300px 300px 1fr;
-  grid-template-rows: 10% 50% 30% 10%;
-  border: solid black;
+  grid-template-rows: 10% 30% 30% 10%;
+
 };
 
 .one-grid {
-grid-row: 1/span 1;
-grid-column: 2/span 3;
-border: solid black;
+  grid-row: 1/span 1;
+  grid-column: 2/span 3;
+
 };
 
 
 
 .two-grid {
-grid-row: 2/span 1;
-grid-column: 2/span 1;
-border: solid black;
+  grid-row: 2/span 1;
+  grid-column: 2/span 1;
+
 }
 
 .three-grid {
   grid-row: 3/span 1;
-  grid-column: 2/span 2;
-  border: solid black;
+  grid-column: 2/span 1;
+  margin-top: -227px;
+  margin-left: 4px;
+  background-color: white;
+
 }
 
 .forth-grid {
   grid-row: 2 /span 1;
   grid-column: 3/span 1;
-  border: solid black;
+  margin-top: 30px;
+
 }
 
 .flatpickr-input[readonly] {
@@ -59,9 +63,6 @@ border: solid black;
   border-color: white;
 }
 
-.grid {
-  display:grid
-}
 
 
 
