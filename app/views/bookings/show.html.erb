@@ -1,9 +1,20 @@
-<div class="show-banner">
+
+<div class="container under-footer">
+  <br><br><br><br><br><br>
+  <p>Owner: <%= @booking.owner.email %></p>
+  <p>Renter: <%= @booking.user.email %></p>
+  <%= link_to boat_path(@booking.boat) do %>
+    <p>Boat: <%= @booking.boat.name %></p>
+  <% end %>
+  <p>Start date: <%= @booking.start_date %></p>
+  <p>End date: <%= @booking.end_date %></p>
+  <p>Total price: <%= @booking.total_price %></p>
+  <p>Status: <%= @booking.status %></p>
 
 
-<div class="container under-footer paragraphe">
+<div class="container contain under-footer">
   <div class="row">
-    <div class="col-xs-12 col-sm-6">
+    <div class="col-xs-12 col-sm-6 paragraphe">
     <p><strong>Owner:</strong> <%= @booking.owner.email %></p>
     <p><strong>Renter:</strong> <%= @booking.user.email %></p>
     <p><strong>Boat:</strong> <%= @booking.boat.name %></p>
@@ -12,11 +23,32 @@
     <p><strong>Total price:</strong> <%= @booking.total_price %></p>
     <p><strong>Status:</strong> <%= @booking.status %></p>
     <% if policy(@booking).edit? %>
-    <%= link_to 'Edit', edit_booking_path(@booking), class: "btn btn-primary" %>
+    <%= link_to 'Edit', edit_booking_path(@booking), class: "btn btn-warning" %>
     <% end %>
-    <%= link_to 'Back', dashboard_renter_path, class: "btn btn-primary" %>
+    <%= link_to 'Back', dashboard_renter_path, class: "btn btn-danger" %>
   </div>
-  `
+
+  <% unless @booking.reviews.first == nil %>
+    <h3>Review</h3>
+    <p>Review: <%= @booking.reviews.first.content %></p>
+    <p>Rating: <%= @booking.reviews.first.rating %> </p>
+    <% 5.times do |i| %>
+      <% if i < @booking.reviews.first.rating %>
+        <i class="fas fa-star"></i>
+      <% else %>
+        <i class="far fa-star"></i>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <h1>New Review</h1>
+  <%= render 'form_review' %>
+
+  <% if policy(@booking).edit? %>
+    <%= link_to 'Edit', edit_booking_path(@booking) %>
+  <% end %>
+  <%= link_to 'Back', dashboard_renter_path %>
+
 </div>
 </div>
 

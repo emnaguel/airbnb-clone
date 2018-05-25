@@ -1,6 +1,6 @@
 class Boat < ApplicationRecord
   belongs_to :owner, class_name: 'User', foreign_key: 'user_id'
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
   CATEGORIES = ['Sailboat', 'Motorboat', 'Catamaran', 'Jet ski', 'Houseboat']
   validates :name, presence: :true
   validates :address, presence: :true

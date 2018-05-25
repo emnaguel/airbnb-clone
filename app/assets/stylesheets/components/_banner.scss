@@ -7,28 +7,24 @@
   padding-top: 15vh;
   }
 
-
-
-.banner h1 {
-  font-family : $title-font;
+.container-banner h1 {
+  font-family : $title-font2;
+  color : white;
   font-weight: bold;
   letter-spacing: 10px;
   font-size: 64px;
 }
 
-.banner p {
-  font-family : courier, sans-serif, monospace;
+.container-banner p {
+  font-family : $headers-font;
+  color : white;
   font-weight: bold;
   letter-spacing: 10px;
   font-size: 40px;
 }
 
-// .form-control {
-//   height: 28px;
-//   border-radius: 5px;
-//   background: white
-
 .btn .btn-primary {
   height: 40px;
   border-radius: 5px
 }
+

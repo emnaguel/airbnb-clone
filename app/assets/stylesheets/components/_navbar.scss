@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between!important;
-  background-color: transparent;
+  background-color: white;
   transition: 0.5s background-color ease;
 }
 
@@ -15,6 +15,29 @@
 .navbar-wagon-white {
   background-color: white;
 }
+.navbar-wagon-transparent {
+  background-color: transparent;
+  .navbar-wagon-link {
+  color: white;
+  font-size: 14px;
+  }
+  .navbar-wagon-link:hover {
+    color: #004E89;
+    text-decoration: none;
+  }
+  .navbar-wagon-brand {
+    color: white;
+  }
+  .navbar-wagon-brand:hover {
+    color: #004E89;
+    text-decoration: none;
+  }
+}
+
+.navbar-wagon-brand {
+  font-size: 40px;
+}
+
 /* Logo */
 .navbar-wagon-brand img {
   height: 50px;
@@ -44,6 +67,7 @@
 .navbar-wagon-link {
   color: #004E89;
   font-size: 14px;
+  font-weight: bold;
 }
 .navbar-wagon-link:hover {
   color: #004E89;

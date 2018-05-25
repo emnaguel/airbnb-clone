@@ -1,16 +1,43 @@
 .paragraphe {
 
-  margin-bottom: -138px;
-  color: white;
-  margin-left: 420px;
-
+ margin-bottom: -21px;
+ color: black;
+ margin-left: 420px;
+ margin-top: 60px;
+ box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+ width: 401px;
+ height: 342px;
+ background-color: white;
 }
 
-.show-banner {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), asset-url('banner.jpg');
-  background-size: cover !important;
-  height: 100vh;
-  color: black;
+.paragraphe p {
+  margin-top: 15px;
   text-align: center;
-  padding-top: 15vh;
+}
+
+.btn-warning {
+  text-align: center;
+  margin-left: 120px;
+  color: white;
+  background-color: #004E89;
+  border: none;
+}
+
+.btn-danger {
+  color: white;
+  background-color: #004E89;
+  border: none;
+}
+.contain {
+  min-height: calc(90vh - 70px) !important;
+}
+
+.btn-warning:hover {
+  color:#004E89;
+  background-color: white;
+}
+
+.btn-danger:hover {
+  color:#004E89;
+  background-color: white;
 }
