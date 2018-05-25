@@ -11,12 +11,12 @@
 .another-text {
   background-color: #EAEAEA;
   margin-bottom: 20px;
+  background-color: white;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
 }
 
 .another-text h5 {
   text-align: center;
-
-
 }
 
 
@@ -29,4 +29,39 @@
 .little-map {
   margin-top: -123px;
 }
+
+.flatpickr-input[readonly] {
+  cursor: pointer;
+  background-color: white;
+}
+
+.form-control[readonly], fieldset[disabled] .form-control {
+  background-color: white;
+
+}
+
+.btn-default {
+  color: #333;
+  background-color: #004E89;
+  border-color: #ccc;
+  color: white;
+  margin-left: 125px;
+  border-color: white;
+}
+
+.grid {
+  display:grid
+}
+h4 {
+    font-size: 31px;
+    margin-top: -82px;
+}
+
+.ligne {
+  margin-top: -20px;
+}
+
+
+
+
 
