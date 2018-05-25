@@ -20,9 +20,16 @@ class BoatsController < ApplicationController
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
       }] if (@boat.latitude.present? && @boat.longitude.present?)
     @bookings = []
+    sum_rate = 0
+    num_bookings = 0
     @boat.bookings.each do |booking|
       @bookings << [booking.start_date, booking.end_date]
+      num_bookings += 1
+      unless booking.reviews.first == nil
+        sum_rate = booking.reviews.first.rating
+      end
     end
+    @boat.stars = sum_rate.to_i / num_bookings.to_i
     @booking = Booking.new
     authorize @boat
   end

@@ -3,5 +3,3 @@
     <%= f.input :end_date, as: :string, placeholder: "End date?", input_html: { class: "datepickr", id: 'book-a-boat-end', data: {bookingdates: @bookings.to_json} } %>
     <%= f.button :submit, class: 'btn btn-primary'%>
 <% end %>
-
-<!-- data-booking-dates="<%= @bookings.to_json %>" -->

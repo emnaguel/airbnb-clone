@@ -7,6 +7,23 @@
   <p>End date: <%= @booking.end_date %></p>
   <p>Total price: <%= @booking.total_price %></p>
   <p>Status: <%= @booking.status %></p>
+
+  <% unless @booking.reviews.first == nil %>
+    <h3>Review</h3>
+    <p>Review: <%= @booking.reviews.first.content %></p>
+    <p>Rating: @booking.reviews.first.rating </p>
+    <% 5.times do |i| %>
+      <% if i < @booking.reviews.first.rating %>
+        <i class="fas fa-star"></i>
+      <% else %>
+        <i class="far fa-star"></i>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <h1>New Review</h1>
+  <%= render 'form_review' %>
+
   <% if policy(@booking).edit? %>
     <%= link_to 'Edit', edit_booking_path(@booking) %>
   <% end %>
