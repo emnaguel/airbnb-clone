@@ -10,6 +10,9 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
+      <% if policy(Boat).create? %>
+        <%= link_to "Add boat", new_boat_path , class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
       <%= link_to "Dashboard", dashboard_owner_path , class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Messages", '#' , class: "navbar-wagon-item navbar-wagon-link" %>
 

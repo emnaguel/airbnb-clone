@@ -26,10 +26,10 @@ class BoatsController < ApplicationController
       @bookings << [booking.start_date, booking.end_date]
       num_bookings += 1
       unless booking.reviews.first == nil
-        sum_rate = booking.reviews.first.rating
+        sum_rate += booking.reviews.first.rating
       end
     end
-    @boat.stars = sum_rate.to_i / num_bookings.to_i
+    num_bookings.to_i > 0 ? @boat.stars = sum_rate.to_i / num_bookings.to_i : @boat.stars = 0
     @booking = Booking.new
     authorize @boat
   end
