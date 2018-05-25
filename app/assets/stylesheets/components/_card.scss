@@ -1,10 +1,22 @@
+.cards {
+  display:flex;
+  justify-content: space-between;
+  align-item: space-evenly;
+}
+
+
 .card {
   border-style: solid;
-  border-color: grey;
+  background-size: cover !important;
+  color: white;
   border-width: 1px;
-  height: 250px;
+  height: 185px;
   position: relative;
+  margin-bottom: 33px;
+  width: 355px;
 }
+
+
 .card-img {
   height: 200px;
   text-shadow: 0 5px 8px rgba(0,0,0,0.6);

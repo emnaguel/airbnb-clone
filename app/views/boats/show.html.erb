@@ -2,9 +2,7 @@
 <%= cl_image_tag @boat.photo, class: "banner-show" %>
 <div class="container infos">
   <div class="under-footer">
-    <div class="row">
-     <div class="boat">
-
+    <div class="row box">
       <div class= "col-sm-offset-3 col-sm-3">
         <p>Owner: <%= @boat.owner.email %></p>
         <p>Name: <%= @boat.name %></p>
@@ -23,12 +21,13 @@
         <% end %>
       <% end %>
         <% if policy(Booking).new? %>
-          <h1>New Booking</h1>
+          <h5><strong>New Booking</strong></h6>
           <%= render 'form_booking' %>
         <% end %>
       </div>
+    </div>
 
-      <div class= "col-sm-4">
+    <div class="col-xs-6 carte">
         <% if @marker.present? %>
         <div id="map" class="little-map" style="width: auto; height: 350px;" data-markers="<%= @marker.to_json %>"></div>
         <% end %>
