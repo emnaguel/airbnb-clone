@@ -20,7 +20,7 @@
           <img class="card-user" src=<%= boat.owner.photo %>>
           </div>
           <div class="card-icons">
-            <i class="fas fa-euro-sign"><%= boat.price %></i>
+            <i class="fas fa-euro-sign"><%= boat.price.round %></i>
             <i class="fas fa-users"><%= boat.capacity %></i>
           </div>
           <% if policy(boat).show? %>

@@ -1,13 +1,13 @@
 .infoss {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1),0 1px 0 0 rgba(0,0,0,0.03);
 
-  margin-top: 117px;
+  margin-top: 70px;
  margin-bottom: 16px;;
 }
 
-
 .tabs {
-  background: #004E89;
+  border-color: black;
+  background: white;
   display: flex;
   padding: 10px 10px 0 10px
 }
@@ -29,7 +29,7 @@
   margin-bottom: 0;
 }
 .tab {
-  background: #756A66;
+  background: white;
   flex: 0 0 50%;
   text-align: center;
   padding: 20px 0;
